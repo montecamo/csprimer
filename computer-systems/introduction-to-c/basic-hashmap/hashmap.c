@@ -168,6 +168,9 @@ void Hashmap_free(HashMap *map) {
   for (int i = 0; i < STARTING_BUCKETS; i++) {
     free_linkedlist(map->buckets[i]);
   }
+
+  free(map->buckets);
+  free(map);
 }
 
 int main() {
